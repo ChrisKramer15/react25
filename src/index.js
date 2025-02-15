@@ -1,34 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// const Greeting = () => {
-//     return <h2>My First Component</h2>
-// }
-
-// function Greeting() {
-//     return React.createElement('h2', {}, 'hello world');
-// }
-
-// function Greeting() {
-//     return(
-//         <div>
-//             <h2>My First Component</h2>;
-//         </div>
-//     )
-// }
-
-const Greeting = () => {
-  return (
-    React.createElement('div', {}, 
-        React.createElement('h2', {}, 'hello world'),
-    )
-  )
+const BookList = () => {
+  return <section>
+    <Book/>
+    <Book/>
+    <Book/>
+    <Book/>
+  </section>
 }
 
+const Book = () => {
+  return <article>
+    <Image/>
+    <Title/>
+    <Author/>
+  </article>
+}
+
+const Image = () => <img src='https://m.media-amazon.com/images/I/91i3L7p7tIL._SY342_.jpg'/>
+const Title = () => <h2>Santa Paws</h2>
+const Author = () => {
+  return <h4>Nicholas Edwards</h4>
+}
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-root.render(<Greeting/>)
-
-
+root.render(<BookList/>)
